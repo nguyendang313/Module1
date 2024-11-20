@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ipvl = prompt('Điểm vật lý: ');
+        let iphh = prompt('Điểm hóa học: ');
+        let ipsh = prompt('Điểm sinh học: ');
+
+        let vl = parseInt(ipvl);
+        let hh = parseInt(iphh);
+        let sh = parseInt(ipsh);
+
+        let dtt = (vl + hh + sh) / 3;
+        document.write('Điểm trung bình: '+ dtt);
+        document.write('<br/>')
+        let tong = vl + hh + sh;
+        document.write('Tổng điểm: ' + tong);
+    </script>
+</body>
+</html>

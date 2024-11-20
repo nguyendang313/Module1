@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        form{
+            display: inline-flex;
+        }
+        div {
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .a1{
+            margin-right: 20px;
+        }
+        .opt{
+            width: 120px;
+        }
+        .a3{
+            margin-top: 16px;
+            text-align: left;
+        }
+        #AMT{
+            width: 130px;
+        }
+        .prs{
+            text-align: left;
+            margin-left: 15px;
+            color: blue;
+            width: 400px;
+        }
+        #btncv{
+            background-color: blueviolet;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="convert_AMT.html" method="dialog">
+        <div class="a1">
+            <label for="AMTcv">Amount<br>
+                <input type="number" id="AMTcv">
+            </label>
+            <p class="prs" id="result">Result: </p>
+        </div>
+        <div class="a2">
+            <label>From Currency</label><br>
+            <select id="fromcv" class="opt">
+                <option value="VND">VietNam</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div class="a2">
+            <label>To Currency</label><br>
+            <select id="tocv" class="opt">
+                <option value="USD">USD</option>
+                <option value="VND">VietNam</option>
+            </select>
+        </div>
+        <div class="a3">
+            <button id="btncv">Convert</button>
+        </div><br>
+        
+    </form>
+</body>
+<script>
+    
+    let btn = document.getElementById('btncv');
+    btn.addEventListener("click",function (){
+        const cou = 0.000041;
+        let AMT = parseFloat(document.getElementById('AMTcv').value);
+        let from = document.getElementById('fromcv').value;
+        let to = document.getElementById('tocv').value;
+        let result;
+
+        if (isNaN(AMT) || (AMT <= 0)) {
+            document.getElementById('result').innerHTML = "Vui lòng nhập số lớn hơn 0";
+            return;
+        }
+        
+        if (from === to) {
+            document.getElementById('result').innerHTML = 'Result: ' + AMT + ' ' + to;
+            return;
+        }else if ((from != to) && (from == 'VND')) {
+            result = AMT * cou;
+            document.getElementById('result').innerHTML = 'Result: ' + result + ' ' + to;
+            return;
+        }else {
+            result = AMT / cou;
+            document.getElementById('result').innerHTML = 'Result: ' + result + ' ' + to;
+            return;
+        }
+    })
+</script>
+</html>

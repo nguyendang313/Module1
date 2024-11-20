@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{
+            height: 200px;
+            width: 500px;
+            margin-top: 5px;
+        }
+        td{
+            height: 20px;
+            width: 50px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        #num_cal{
+            height: 30px;
+            width: 484px;
+            margin-left: 4px;
+        }
+        .div_2{
+            margin-top: 50px;
+        }
+        #num_cal{
+            text-align: right;
+            font-size: 25px;
+        }
+        .WH{
+            height: 35px;
+            width: 66px;
+            border: 0.5px;
+        }
+        .btn-attr{
+            background-color: rgb(209, 211, 211);
+        }
+        .btn-blue{
+            background-color: rgb(67, 67, 252);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form method="dialog">
+        <input type="number" id="number1" placeholder="number1">
+        <input type="number" id="number2" placeholder="number2"><br><br>
+
+        <button onclick="calculate('+')">Addition(+)</button>
+        <button onclick="calculate('-')">Subtraction(-)</button>
+        <button onclick="calculate('*')">Multiplication(X)</button>
+        <button onclick="calculate('/')">Division(/)</button>
+
+        <br>
+        <br>
+        <label id="result">Kết quả: </label>
+    </form>
+
+    
+    <div class="div_2">
+        <input type="number" value="" id="num_cal">
+        <table>
+            <tr>
+                <td><button class="WH btn-attr">Rad</button></td>
+                <td><button class="WH btn-attr"><i class="fa-thin fa-bars"></i></button></td>
+                <td><button class="WH btn-attr">x!</button></td>
+                <td><button class="WH btn-attr">(</button></td>
+                <td><button class="WH btn-attr">)</button></td>
+                <td><button class="WH btn-attr">%</button></td>
+                <td><button class="WH btn-attr">AC</button></td>
+            </tr>
+            <tr>
+                <td><button class="WH btn-attr">Inv</button></td>
+                <td><button class="WH btn-attr">sin</button></td>
+                <td><button class="WH btn-attr">ln</button></td>
+                <td><button class="WH cal-num">7</button></td>
+                <td><button class="WH cal-num">8</button></td>
+                <td><button class="WH cal-num">9</button></td>
+                <td><button class="WH btn-attr">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="WH btn-attr"><i class="fa-light fa-pi"></i></button></td>
+                <td><button class="WH btn-attr">cos</button></td>
+                <td><button class="WH btn-attr">log</button></td>
+                <td><button class="WH cal-num">4</button></td>
+                <td><button class="WH cal-num">5</button></td>
+                <td><button class="WH cal-num">6</button></td>
+                <td><button class="WH btn-attr">x</button></td>
+            </tr>
+            <tr>
+                <td><button class="WH btn-attr">e</button></td>
+                <td><button class="WH btn-attr">tan</button></td>
+                <td><button class="WH btn-attr"><i class="fa-thin fa-check"></i></button></td>
+                <td><button class="WH cal-num">1</button></td>
+                <td><button class="WH cal-num">2</button></td>
+                <td><button class="WH cal-num">3</button></td>
+                <td><button class="WH btn-attr">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="WH btn-attr">Ans</button></td>
+                <td><button class="WH btn-attr">EXP</button></td>
+                <td><button class="WH btn-attr">x<sup>y</sup></button></td>
+                <td><button class="WH cal-num ">0</button></td>
+                <td><button class="WH ">.</button></td>
+                <td><button class="WH btn-blue">=</button></td>
+                <td><button class="WH btn-attr">+</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    
+    function calculate(operation) {
+        let num1 = parseFloat(document.getElementById('number1').value);
+        let num2 = parseFloat(document.getElementById('number2').value);
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('result').innerHTML = "Vui lòng nhập số!";
+            return;
+        }
+
+        if (operation === '+') {
+            result = num1 + num2;
+        }else if (operation === '-') {
+            result = num1 - num2;
+        }else if (operation === '*') {
+            result = num1 * num2;
+        }else if (operation === '/') {
+            if (num2 === 0) {
+                document.getElementById('result').innerHTML = 'Không thể chia cho 0';
+                return;
+            }
+            result = num1 / num2;
+        }
+
+        document.getElementById('result').innerHTML = "Kết quả: " + result;
+    }
+
+
+
+</script>
+</html>

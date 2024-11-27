@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    let nhietDo = +prompt('Nhập nhiệt độ: ');
+    while (nhietDo < 20 || nhietDo > 100) {
+      alert('Vui lòng điều chỉnh nhiệt độ vào khoảng 20 đến 100 độ');
+      nhietDo = +prompt('Nhập nhiệt độ: ');
+    }
+    document.write('Nhiệt độ bình thường');
+  </script>
+</body>
+</html>

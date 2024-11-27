@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let diemkt = +prompt('Nhập điểm kiểm tra: ');
+        let diemGiuaKy = +prompt('Nhập điểm giữa kỳ: ');
+        let diemCuoiKy = +prompt('Nhập điểm cuối kỳ: ');
+        let hocLuc = ((diemkt + (diemGiuaKy * 2) + (diemCuoiKy * 3)) / 6)
+        let hL = hocLuc.toFixed(2);
+
+        if (hocLuc >= 8) {
+            alert(`Loại giỏi: ${hL}`);
+        } else if (hocLuc >= 6.5) {
+            alert(`Loại khá: ${hL}`)
+        } else if (hocLuc >= 5) {
+            alert(`Loại trung bình: ${hL}`);
+        } else if (hocLuc >= 3.5) {
+            alert(`Loại yếu: ${hL}`);
+        } else {
+            alert(`Loại kém: ${hL}`);
+        }
+    </script>
+</body>
+</html>

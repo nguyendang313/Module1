@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let chieuCao = +prompt('Nhập chiều cao theo met: ');
+        let canNang = +prompt('Nhập cân nặng theo kg: ');
+        let BMI = parseFloat(canNang / (chieuCao * chieuCao));
+
+
+        if (Number.isNaN(chieuCao) || Number.isNaN(canNang)) {
+            alert('Vui lòng nhập chiều cao hoặc cân nặng bằng số!')
+        } else  if (chieuCao <= 0 || canNang <= 0) {
+            alert('Vui lòng nhập số lớn hơn 0!')
+        } else if (BMI < 18.5) {
+            document.write('Underweight');
+        } else if (BMI < 25.0) {
+            document.write('Normal');
+        } else if (BMI < 30.0) {
+            document.write('Overweight');
+        } else {
+            document.write('Obese');
+        }
+    </script>
+</body>
+</html>

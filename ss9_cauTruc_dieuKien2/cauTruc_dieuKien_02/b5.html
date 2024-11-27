@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('Nhập cạnh a: ');
+        let b = +prompt('Nhập cạnh b: ');
+        let dienTich = parseFloat(1/2 * a * b);
+
+        if (Number.isNaN(a) || Number.isNaN(b)) {
+            alert('Vui lòng nhập số cho cạnh a hoặc b!')
+            if (a <= 0) {
+                alert('Tam giác vuông này không tồn tại!');
+            } else if (b <= 0) {
+                alert('Tam giác vuông này không tồn tại!');
+            }
+        } else {
+            alert(`Kết quả là: ${dienTich}`);
+        }
+    </script>
+</body>
+</html>

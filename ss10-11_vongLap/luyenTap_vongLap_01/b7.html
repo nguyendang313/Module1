@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 0;
+         for (i = 1; i <= 100; i++) {
+            a += 1;
+            if (a % 15 === 0) {
+                document.write('FizzBizz <br>');
+            } else if (a % 5 === 0) {
+                document.write('Bizz <br>');
+            } else if (a % 3 === 0) {
+                document.write('Fizz <br>');
+            } else {
+                document.write(a + '<br>');
+            }
+         }
+    </script>
+</body>
+</html>

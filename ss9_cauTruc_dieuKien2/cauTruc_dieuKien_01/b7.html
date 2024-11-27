@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let timeCall = +prompt('Nhập thời gian gọi: ');
+    let loaiCuocphi = prompt('Mời nhập loại cước phí: ')
+    let ngoaiMang = 1200;
+    let noiMang = 700;
+    let cuocNoimang = timeCall * noiMang;
+    let cuocNgoaimang = timeCall * ngoaiMang;
+
+    if (Number.isInteger(timeCall) <= 0) {
+      alert('Vui lòng nhập số phút lớn hơn 0!')
+      if (Number.isNaN(timeCall)) {
+        alert('Vui lòng nhập thời gian theo số phút!');
+      }
+    } else if (loaiCuocphi !== "Nội mạng" && loaiCuocphi !== "Ngoại mạng") {
+      alert('Vui lòng nhập loại cước phí là "Nội mạng" hoặc "Ngoại mạng"');
+    } else if (loaiCuocphi == "Nội mạng" || loaiCuocphi == "nội mạng" || loaiCuocphi == "noi mang") {
+      alert(`Tổng cước phí là: ${cuocNoimang}VND`);
+      if (loaiCuocphi == "Ngoại mạng" || loaiCuocphi == "ngoại mạng" || loaiCuocphi == "ngoai mang") {
+        alert(`Tổng cước phí là: ${cuocNgoaimang}VND`);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let giaHang = +prompt('Nhập giá sản phẩm: ');
+        let soLgban = +prompt('số lượng sản phẩm đã bán: ');
+        let thanhTien = parseFloat(giaHang * soLgban);
+        let hoaHong = parseFloat(0);
+
+        if (thanhTien > 1000000000) {
+            hoaHong = thanhTien * 15 / 100;
+            alert(`Tháng này nhận 15% hoa hồng: ${hoaHong = thanhTien * 15 / 100}`);
+            console.log(typeof (tongTien));
+        } else if (thanhTien >= 500000000) {
+            hoaHong = thanhTien * 10 / 100;
+            alert(`Tháng này nhận 10% hoa hồng: ${hoaHong = thanhTien * 10 / 100}`);
+            console.log(typeof (tongTien));
+        } else  if (thanhTien >= 100000000) {
+            hoaHong = thanhTien * 5 / 100;
+            alert(`Tháng này nhận 5% hoa hồng: ${hoaHong = thanhTien * 5 / 100}`);
+            console.log(typeof (tongTien));
+        } else {
+            alert(`Tháng này không có hoa hồng ${tongTien}`);
+            console.log(typeof (tongTien));
+        }
+    </script>
+</body>
+</html>

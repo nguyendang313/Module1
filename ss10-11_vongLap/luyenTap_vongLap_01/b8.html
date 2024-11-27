@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_choose">Chơi</button>
+    <script>
+        document.getElementById('btn_choose').addEventListener('click', function () {
+            let a = parseInt(prompt('Mời nhập số nhỏ nhất: '));
+            let b = parseInt(prompt('Mời nhập số lớn nhất: '));
+
+            if (isNaN(a) || isNaN(b) || a >= b) {
+                alert('Khoảng không hợp lệ! Vui lòng nhập lại');
+            }
+
+            let soNgaunhien = Math.floor(Math.random() * (b - a + 1)) + a;
+            let soLuotdoan = 3;
+
+            for (let i = 0; i < soLuotdoan; i++) {
+                let doan = parseInt(prompt(`Nhập số đoán lần ${i+1}`));
+
+                if (isNaN(doan)) {
+                    alert('Vui lòng nập số hợp lệ!');
+                    continue;
+                }
+
+                if (doan === soNgaunhien) {
+                    alert('Đoán đúng.');
+                    return;
+                } else if (doan < soNgaunhien) {
+                    alert('Số nhỏ hơn số ngẫu nhiên');
+                } else {
+                    alert('Số lớn hơn số ngẫu nhiên');
+                }
+            }
+            alert(`Hết lượt đoán. Số ngẫu nhiên là: ${soNgaunhien}`);
+        })
+    </script>
+</body>
+</html>

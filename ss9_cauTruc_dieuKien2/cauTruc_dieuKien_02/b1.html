@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let C = +prompt('Nhập độ C: ')
+        let F = parseFloat((C * (9 / 5)) + 32);
+
+        if (Number.isNaN(C)) {
+            alert('Vui lòng nhập số thích hợp');
+        } else {
+            alert(`Độ F là: ${F}\u00B0F`);
+        }
+    </script>
+</body>
+</html>

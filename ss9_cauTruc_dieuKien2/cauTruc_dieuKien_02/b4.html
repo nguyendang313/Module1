@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('Nhập giá trị cạnh a: ');
+        let b = +prompt('Nhập giá trị cạnh b: ');
+        let dienTich = parseFloat(a * b);
+
+        if (Number.isNaN(a) || Number.isNaN(b)) {
+            alert('Vui lòng nhập số cho a hoặc b!')
+            if (a <= 0) {
+                alert('Vui lòng nhập cạnh a lớn hơn 0!')
+            } else if (b <= 0) {
+                alert('Vui lòng nhập cạnh b lớn hơn 0!')
+            }
+        } else {
+            alert(`Diện tích hình chữ nhật là: ${dienTich}cm`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function tinhLaiKep(p, r, n, t) {
+            let A = p * Math.pow(1 + r / n, n * t);
+            return A;
+        }
+
+        let p = +prompt('Nhập số tiền: ');
+        let r = +prompt('Nhập tỉ lệ lãi: ');
+        let n = +prompt('Số tháng gộp: ');
+        let t = +prompt('Thời hạn gửi: ');
+
+        let soTienCuoiCung = tinhLaiKep(p, r, n, t);
+
+        if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(n) || Number.isNaN(t)) {
+            alert('Vui lòng nhập số thích hợp!')
+        } else {
+            alert(`Số tiền cuối cùng: ${soTienCuoiCung.toLocaleString()} VND`); //toLocaleString: định dạng hiển thị tiền tệ
+        }
+    </script>
+</body>
+</html>

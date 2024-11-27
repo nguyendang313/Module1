@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      function calculateTNCN(income, dependents) {
+          const giamTruBanThan = 11000000;
+          const giamTruNguoiPhuThuoc = 4400000;
+
+          let giamTruGiaCanh = giamTruBanThan + dependents * giamTruNguoiPhuThuoc;
+          let thuNhapChiuThue = income - giamTruGiaCanh;
+
+          if (thuNhapChiuThue <= 0) return 0;
+
+          let thueTNCN = 0;
+
+          if (thuNhapChiuThue <= 5000000) {
+              thueTNCN = thuNhapChiuThue * 0.05;
+          } else if (thuNhapChiuThue <= 10000000) {
+              thueTNCN = 5000000 * 0.05 + (thuNhapChiuThue - 5000000) * 0.1;
+          } else if (thuNhapChiuThue <= 18000000) {
+              thueTNCN = 5000000 * 0.05 + 5000000 * 0.1 + (thuNhapChiuThue - 10000000) * 0.15;
+          } else if (thuNhapChiuThue <= 32000000) {
+              thueTNCN = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + (thuNhapChiuThue - 18000000) * 0.2;
+          } else if (thuNhapChiuThue <= 52000000) {
+              thueTNCN = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + (thuNhapChiuThue - 32000000) * 0.25;
+          } else if (thuNhapChiuThue <= 80000000) {
+              thueTNCN = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + (thuNhapChiuThue - 52000000) * 0.3;
+          } else {
+              thueTNCN = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + 28000000 * 0.3 + (thuNhapChiuThue - 80000000) * 0.35;
+          }
+
+          return thueTNCN;
+      }
+
+
+      let income = +prompt('Nhập lương: ')
+      let dependents = +prompt("nhập số người phụ thuộc: ");
+      let tax = calculateTNCN(income, dependents);
+
+      if (Number.isNaN(income) || Number.isNaN(dependents)) {
+          alert('Vui lòng nhập số thích hợp!')
+      } else {
+          alert(`Thuế TNCN phải đóng: ${tax.toLocaleString()} VND`);
+      }
+  </script>
+</body>
+</html>

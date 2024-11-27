@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let a = +prompt('Nhập a: ');
+    let b = +prompt('Nhập b: ');
+    let c = +prompt('Nhập c: ');
+    let delta = parseFloat((b*b)-(4*a*c));
+
+    if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c)) {
+      alert('Vui lòng nhập số thích hợp!')
+    } else if (a !== 0) {
+      if (delta > 0) {
+        let x1 = parseFloat((-b + Math.sqrt(delta)) / (2 * a));
+        let x2 = parseFloat((-b - Math.sqrt(delta)) / (2 * a));
+        alert(`Phương trình có 2 nghiệm: x1 = ${x1.toFixed(3)} và x2 = ${x2.toFixed(3)}`);
+      } else if (delta === 0) {
+        let x = parseFloat((-b) / (2 * a));
+        alert(`Phương trình có nghiệm kép: x = ${x.toFixed(3)}`);
+      } else {
+        alert('Phương trình vô nghiệm');
+      }
+    } else if (a === 0) {
+      alert('Đây không phải phương trình bậc 2!')
+    }
+  </script>
+</body>
+</html>
